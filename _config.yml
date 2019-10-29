@@ -4,11 +4,11 @@
 
 # Site
 title: 橘大胖的BLOG
-subtitle: 我有猫，三只
-description: 一个前端 FontEnd
-keywords: 前端 Javascript 蔡传明
-author: Cai Chuanming
-language: zh-CN
+subtitle: 我有猫，三只（I have three cat）
+description: Derek的前端（FontEnd）博客
+keywords: 前端 FontEnd Javascript 蔡传明
+author: 橘大胖 - Cai Chuanming
+language: zh-Hans
 timezone:
 
 # URL
