@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 橘大胖的BLOG
-subtitle: 我有猫，三只（I have three cat）
+title: 橘大胖的博客
+subtitle: 我有猫，三只
 description: Derek的前端（FontEnd）博客
-keywords: 前端 FontEnd Javascript 蔡传明
+keywords: 前端 FontEnd Javascript 蔡传明 橘大胖
 author: 橘大胖 - Cai Chuanming
 language: zh-Hans
 timezone:
@@ -83,6 +83,7 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins: hexo-generate-feed
 ## Themes: https://hexo.io/themes/
 theme: next
 
