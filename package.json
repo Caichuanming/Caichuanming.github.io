@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Caichuanming/Caichuanming.github.io.git"
+        "url": "git@github.com:Caichuanming/Caichuanming.github.io.git"
     },
     "author": "",
     "license": "ISC",

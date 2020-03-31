@@ -10,7 +10,11 @@ module.exports = [
     },
     {
         text: "后端",
-        items: [{ text: "NodeJs", link: "/blog/backend/NodeJs/" }]
+        items: [
+            { text: "NodeJs", link: "/blog/backend/NodeJs/" },
+            { text: "Java", link: "/blog/backend/Java/" }
+        ]
     },
-    { text: "关于", link: "/About/" }
+    { text: "工具", link: "/blog/tools/" },
+    { text: "关于", link: "/blog/about/" }
 ];

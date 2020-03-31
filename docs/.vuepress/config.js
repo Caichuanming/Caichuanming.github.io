@@ -29,6 +29,10 @@ module.exports = {
         nav
     },
     plugins: {
-        "vuepress-plugin-auto-sidebar": { titleMode: "default", nav: true }
+        "vuepress-plugin-auto-sidebar": {
+            titleMode: "titlecase",
+            sort: "desc",
+            nav: true
+        }
     }
 };
