@@ -6,6 +6,9 @@ set -e
 # 生成静态文件
 yarn build
 
+# 将CNAME文件copy到dist
+cp -i CNAME dist
+
 # 进入生成的文件夹
 cd ./dist
 
