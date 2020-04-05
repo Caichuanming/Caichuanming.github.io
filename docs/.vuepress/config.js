@@ -1,4 +1,13 @@
 const nav = require("./nav.js");
+const sortFn = key => (a, b) => {
+    if (a[key] === "README") {
+        return -1;
+    }
+    if (b[key] === "README") {
+        return 1;
+    }
+    return a[key].charCodeAt(0) - b[key].charCodeAt(0);
+};
 module.exports = {
     base: "/",
     title: "橘大胖 Blog",
@@ -6,14 +15,19 @@ module.exports = {
     dest: "./dist",
     head: [
         [
-            [
-                "meta",
-                {
-                    name: "viewport",
-                    content:
-                        "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
-                }
-            ]
+            "meta",
+            {
+                name: "viewport",
+                content:
+                    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
+            }
+        ],
+        [
+            "link",
+            {
+                rel: "shortcut icon",
+                href: "/img/logo.png"
+            }
         ]
     ],
     markdown: {
@@ -28,11 +42,23 @@ module.exports = {
         sidebarDepth: 3,
         nav
     },
-    plugins: {
-        "vuepress-plugin-auto-sidebar": {
-            titleMode: "titlecase",
-            sort: "desc",
-            nav: true
-        }
-    }
+    plugins: [
+        [
+            "vuepress-plugin-auto-sidebar",
+            {
+                titleMode: "titlecase",
+                sort: sortFn,
+                nav: true
+            }
+        ],
+        [
+            "vuepress-plugin-clean-urls",
+            {
+                normalSuffix: "/",
+                indexSuffix: "/",
+                notFoundPath: "/404.html"
+            }
+        ],
+        ["vuepress-plugin-nprogress"]
+    ]
 };

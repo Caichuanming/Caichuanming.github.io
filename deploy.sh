@@ -8,6 +8,7 @@ yarn build
 
 # 将CNAME文件copy到dist
 cp -i CNAME dist
+cp -i favicon.ico dist
 
 # 进入生成的文件夹
 cd ./dist
