@@ -13,6 +13,7 @@ module.exports = {
     title: "橘大胖 Blog",
     description: "橘大胖 Blog vuepress",
     dest: "./dist",
+    logo: "/img/logo.png",
     head: [
         [
             "meta",

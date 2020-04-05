@@ -4,8 +4,8 @@ home: true
 sidebar: auto
 heroImage: /img/index-logo.png
 heroText: 橘大胖 Blog
-tagline: 目前，这就是个笔记，一个公开的笔记
-actionText: 开始笔记
+tagline: 目前，这就是个笔记
+actionText: Hello World
 actionLink: /blog/fontend/JavaScript/
 features:
     # - title: 生活
