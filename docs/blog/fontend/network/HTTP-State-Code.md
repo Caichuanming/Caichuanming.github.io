@@ -21,6 +21,7 @@
 - 404（Not Found）服务器找不到资源
 - 405（Method Not Allowed）请求方法错误
 - 500（Internal Server Error）服务器错误
+- 502（Bad Gateway）错误网关，响应超时。错误原因是因为服务器当前链接过多，导致服务器无法响应
 - 503（Service Unavailable）服务器为准备好，常见服务器宕机或接口错误
 - 504（Gateway Timeout）服务器超时
 

@@ -7,7 +7,8 @@ module.exports = [
             { text: "CSS", link: "/blog/fontend/CSS/" },
             { text: "JavaScript", link: "/blog/fontend/JavaScript/" },
             { text: "网络", link: "/blog/fontend/network/" },
-            { text: "框架", link: "/blog/fontend/frame/" }
+            { text: "框架", link: "/blog/fontend/frame/" },
+            { text: "其它", link: "/blog/fontend/other/" }
         ]
     },
     {
