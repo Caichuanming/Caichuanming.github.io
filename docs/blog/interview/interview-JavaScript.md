@@ -35,6 +35,7 @@ Child.prototype = new Parent()
 ### 借用构造函数继承
 
 优点：可以在子类型中向父类传参
+
 缺点：父类原型上的方法不可用
 
 ```js
@@ -59,6 +60,57 @@ function Child() {
 Child.prototype = new Parent()
 ```
 
+### 原型式继承
+
+类似工厂模式，但其实是对于父类的一个浅拷贝
+
+缺点同原型链继承一样，实例属性会共享，无法传参
+```js
+function objCreate(parent) {
+    function f() {};
+    function.prototype = parent;
+    return new f();
+}
+
+// 此函数在ES5中等同于Object.create()
+```
+
+### 寄生式继承
+
+不能做到函数复用而降低效率
+```js
+function createChild(parent) {
+    const child = Object.create(parent)
+    return child
+}
+```
+
+### 寄生组合式继承
+
+通过借用构造函数来继承属性，通过原型链的混成形式来继承方法
+```js
+
+function Parent(){}
+
+function Child(){
+    Parent.call(this)
+}
+function inherit(child, parent) {
+    const obj = Object.create(parent);
+    obj.constructor = child;
+    child.prototype = obj;
+}
+
+inherit(Child, Parent)
+```
+
+### ES6 - extend
+
+### ES5继承和ES6继承的区别
+
+- ES5的继承实质上是先创建子类的实例对象，然后再将父类的方法添加到this上（Parent.call(this)）.
+- ES6的继承有所不同，实质上是先创建父类的实例对象this，然后再用子类的构造函数修改this。因为子类没有自己的this对象，所以必须先调用父类的super()方法，否则新建实例报错。
+
 ## this
 
 - 普通函数中`this`永远指向最后调用它的对象。没有调用对象，就指向`window`，严格模式下，是`undefined`，会报错
@@ -69,6 +121,32 @@ Child.prototype = new Parent()
 - 都能改变普通函数中的this指向
 - 区别在于传入的参数不同，第一个参数都是要改变到的对象。后面的参数call是一个个参数列举，而apply是所有的参数组成一个数组作为第二个参数
 - bind是创建一个新的待执行函数，这个新函数是原函数的拷贝
+
+```js
+Function.prototype.myBind = function (context) {
+    if (typeof this !== 'function') {
+        throw new error('不是函数');
+    }
+
+    const args = [...arguments].sclie(1);
+    const that = this;
+    return function () {
+        return that.call(context, ...arg, ...arguments)
+    }
+}
+```
+
+### new
+
+- 创建一个新对象
+- 将新对象原型绑定到
+```js
+function myNew(item) {
+    const newObj1 = Object.create(item.prototype);
+    const newObj2 = item.apply(newObj1, [...arguments].sclie(1));
+    typeof newObj2 === 'object' && newObj2 !== null ? newObj2 : newObj1;
+}
+```
 
 ## 函数声明与函数表达式区别
 
