@@ -1,5 +1,5 @@
 ---
-autoGroup-1: JavaScript 基础
+autoGroup-1: 基础
 ---
 
 # 数组

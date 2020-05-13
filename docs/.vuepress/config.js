@@ -37,7 +37,7 @@ module.exports = {
     themeConfig: {
         // GitHub仓库地址
         repo: "https://github.com/Caichuanming", // 自定义仓库链接文字。
-        lastUpdated: "上次更新时间", //显示更新时间
+        // lastUpdated: "上次更新时间", //显示更新时间
         repoLabel: "GitHub",
         sidebarDepth: 3,
         nav,
@@ -61,14 +61,14 @@ module.exports = {
         ],
         ["vuepress-plugin-nprogress"],
         [
-            "@vuepress/last-updated",
+            "vuepress-plugin-git-log",
             {
-                transformer: () => {
-                    const moment = require("moment");
-                    moment.locale("zh-cn");
-                    return moment().format("YYYY-MM-DD hh:mm:ss");
-                },
+                additionalArgs: "--no-merge",
+                onlyFirstAndLastCommit: true,
+                formatTime: (timestamp, lang) =>
+                    new Date(timestamp).toLocaleString(lang),
             },
         ],
+        ["vuepress-plugin-smooth-scroll"],
     ],
 };
